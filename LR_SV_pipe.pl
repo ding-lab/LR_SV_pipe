@@ -15,7 +15,7 @@ sub usage {
 
         This pipeline is designed for calling SVs from long-reads sequencing data.
         Author: ywzhang0713\@gmail.com Yuwei ZHANG 
-        Usage: $0 config.tsv
+        Usage: $0 config.txt
 
 USAGE
 print "$usage";
@@ -44,7 +44,7 @@ my $mode = $conf{SNIFFLES_MODE};
 my $sample_size = 0;
 my %allsample;
 
-
+make_path abs_path($conf{OUTDIR});
 my $bsub = "";
 my $group = $conf{GROUP};
 my $q = $conf{QUEUE};
@@ -56,7 +56,7 @@ while(<IN>){
 	my $id = shift @t;
 	my $pltform = $t[0];
 	my $input = abs_path($t[1]);
-	open OUT, ">$out/$id/cmd.sh";
+
 	
 	$step1 = "$conf{MINIMAP2} --MD -t $thread -ax $pltform $conf{INDEX} $input 2> $out/$id/00_mapping/$id.minimap2.log | $conf{SAMTOOLS} view -@ $thread -bS | $conf{SAMTOOLS} sort -@ $thread -o $out/$id/00_mapping/$id.minimap2.align.bam && $conf{SAMTOOLS} index -@ $thread $out/$id/00_mapping/$id.minimap2.align.bam";
 	$step2 = "$conf{SNIFFLES} --input $out/$id/00_mapping/$id.minimap2.align.bam --vcf $out/$id/01_SVcall/$id.vcf.gz --snf $out/$id/01_SVcall/$id.snf 1> $out/$id/01_SVcall/$id.sniffles.log 2> $out/$id/01_SVcall/$id.sniffles.err";
@@ -95,9 +95,9 @@ while(<IN>){
 	}
 	# print $cmd."\n";
 
-	make_path abs_path($conf{OUTDIR});
 	
-	print OUT $cmd;
+	open OUT, ">$out/$id/cmd.sh";
+	print OUT "$cmd";
 	close OUT;
 	
 	my $lsf_out = "$out/$id/bsub.log";
