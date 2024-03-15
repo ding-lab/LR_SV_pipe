@@ -1,6 +1,6 @@
 # A pipeline for calling SVs from long-read sequencing data
 
-This pipeline is designed for calling structural variants from 3rd generation sequencing data (e.g. Pacbio-HiFi and Ont). 
+This pipeline is designed for calling structural variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
 It works on LSF job scheduler and can run multiple jobs in parallel.
 Basically, this pipeline is composed of two steps: mapping by minimap2 and SV calling by Sniffles2.  
 
