@@ -15,7 +15,7 @@ sub usage {
 
         This pipeline is designed for calling SVs from long-reads sequencing data.
         Author: ywzhang0713\@gmail.com Yuwei ZHANG 
-        Usage: $0 config.txt
+        Usage: $0 config.tsv
 
 USAGE
 print "$usage";
