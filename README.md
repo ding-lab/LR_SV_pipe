@@ -36,5 +36,7 @@ Usage: perl LR_SV_pipe.pl config.tsv
   
   Please be sure the output dir is writtable and all softwares can be invoked. 
 
+  Take care of the Sniffles mode!!! This pipeline defaultly run both basic and mosaic (for low-frequency SVs) modes.
+
 ## Contact ##
 Yuwei ZHANG ywhang0713@gmail.com
