@@ -1,0 +1,8 @@
+[M::main::16.220*1.00] loaded/built the index for 639 target sequence(s)
+[M::mm_mapopt_update::25.100*1.00] mid_occ = 148
+[M::mm_idx_stat] kmer size: 19; skip: 19; is_hpc: 0; #seq: 639
+[M::mm_idx_stat::29.796*1.00] distinct minimizers: 214927269 (89.36% are singletons); average occurrences: 1.450; average spacing: 10.486; total length: 3267117988
+[M::worker_pipeline::29.806*1.00] mapped 1 sequences
+[M::main] Version: 2.19-r1057
+[M::main] CMD: minimap2 --MD -t 12 -ax map-hifi /rdcw/fs1/dinglab/Active/Projects/yuweiz/data/human/hg38/minimap2/hg38.mmi /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_data/example.fastq
+[M::main] Real time: 30.707 sec; CPU: 30.635 sec; Peak RSS: 11.427 GB
