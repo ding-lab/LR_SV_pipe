@@ -1,0 +1,21 @@
+Running Sniffles2, build 2.0.7
+  Run Mode: call_sample
+  Start on: 2024/03/15 17:35:35
+  Working dir: /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv
+  Used command: /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda/envs/longread_cv/bin/sniffles --input /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/00_mapping/test2.minimap2.align.bam --vcf /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.vcf.gz --snf /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.snf
+==============================
+Opening for reading: /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/00_mapping/test2.minimap2.align.bam
+Opening for writing: /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.vcf.gz (single-sample, sorted, bgzipped, tabix-indexed)
+Opening for writing: /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.snf
+
+Analyzing 1 alignments total...
+
+(Estimating progress); 635/639 tasks done; parallel 4/4; 1 candidates. 0 SVs. 
+(Estimating progress); 639/639 tasks done; parallel 0/4; 1 candidates. 0 SVs. 
+Took 4.21s.
+
+Generating index for /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.vcf.gz...
+Indexing VCF output took 0.00s.
+Done.
+Wrote 1 SV candidates to /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.snf (for multi-sample calling).
+Wrote 0 called SVs to /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/01_SVcall/test2.vcf.gz (single-sample, sorted, bgzipped, tabix-indexed)
