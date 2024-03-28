@@ -24,7 +24,7 @@ Usage: perl LR_SV_pipe.pl config.tsv
 ## Step 1 ## 
   prepare your sample list file (sample.lst)
   
-  format: #id sequencing_platform path_of_fastq
+      format: #id    sequencing_platform    path_of_fastq
   
   Note: specify the sequencing platform as the parameter -x used in minimap2 (https://lh3.github.io/minimap2/minimap2.html). 
   
@@ -38,5 +38,18 @@ Usage: perl LR_SV_pipe.pl config.tsv
 
   Take care of the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency/non-germline SVs) modes.
 
+## Step 4 ##
+  Somatic variant calling is based on Clair3 (https://github.com/HKU-BAL/Clair3). 
+  This step requires the output bam file from Minimap2!
+  
+  a. load new environment: `export PATH=/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin:$PATH`
+
+  b. set up a configure file and a sample list. 
+
+      sample list format: #id    tumor_bam_path    normal_bam_path(if no, will automatically run Clair3 in the tumor only mode)
+  
+  c. run **perl LR_1_SomaticVar.pl config4SomaticVar.tsv**
+
+  
 ## Contact ##
 Yuwei ZHANG ywhang0713@gmail.com
