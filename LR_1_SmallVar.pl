@@ -70,7 +70,7 @@ while(<IN>){
 		my $t_input = abs_path($t[0]);
 		my $n_input = abs_path($t[1]); 
 
-		$cmd = "$clair3 --tumor_bam_fn $t_input --normal_bam_fn $n_input --ref_fn $ref --threads $thread  --output_dir $outdir --platform $seq_platform --output_dir $outdir --samtools $samtools --python $python --pypy $pypy --parallel /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/parallel --clair3_path /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/ --whatshap /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/whatshap";
+		$cmd = "$clair3 --tumor_bam_fn $t_input --normal_bam_fn $n_input --ref_fn $ref --threads $thread  --output_dir $outdir --platform $seq_platform --output_dir $outdir --samtools $samtools --python $python --pypy $pypy --parallel /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/parallel --clair3_path /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/ --whatshap /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/whatshap -P /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/clairs_models/$seq_platform/pileup.pkl -F /rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/clairs_models/$seq_platform/full_alignment.pkl";
 	}
 	if($input_number == 2)
 	{
