@@ -1,10 +1,10 @@
 # A pipeline for calling SVs from long-read sequencing data
 
-This pipeline is designed for calling structural variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
+This pipeline is designed for calling structural and somatic variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
 It works on LSF job scheduler and can run multiple jobs in parallel.
-Basically, this pipeline is composed of two steps: mapping by minimap2 and SV calling by Sniffles2.  
+Basically, this pipeline is composed of two steps: `LR_0_StrucVar.pl` for structral variants, and `LR_1_SmallVar.pl` for small variants.
 
-Usage: perl LR_SV_pipe.pl config.tsv
+Usage: a. perl LR_0_StrucVar.pl config4StrucVar.tsv    b. perl LR_1_SmallVar.pl config4SmallVar.tsv
 
 ## Prerequisite ##
 **Option 1:** set a environment for LSF job on compute1 by adding the following to ~/.bashrc file:
@@ -39,16 +39,16 @@ Usage: perl LR_SV_pipe.pl config.tsv
   Take care of the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency/non-germline SVs) modes.
 
 ## Step 4 ##
-  Somatic variant calling is based on Clair3 (https://github.com/HKU-BAL/Clair3). 
+  Small variant calling is based on ClairS (https://github.com/HKU-BAL/ClairS). 
   This step requires the output bam file from Minimap2!
   
   a. load new environment: `export PATH=/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin:$PATH`
 
   b. set up a configure file and a sample list. 
 
-      sample list format: #id    tumor_bam_path    normal_bam_path(if no, will automatically run Clair3 in the tumor only mode)
+      sample list format: #id    tumor_bam_path    normal_bam_path(if no, will automatically run ClairS in the tumor only mode)
   
-  c. run **perl LR_1_SomaticVar.pl config4SomaticVar.tsv**
+  c. run **perl LR_1_SmallVar.pl config4SmallVar.tsv**
 
   
 ## Contact ##
