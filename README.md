@@ -17,8 +17,7 @@ Usage: a. perl LR_0_StrucVar.pl config4StrucVar.tsv    b. perl LR_1_SmallVar.pl 
     
   do NOT forget to run `source ~/.bashrc`
   
-**Option 2:** modify the configure file (config.tsv)
-    Specify the location of the softwares (minimap2 & Sniffles2) and the minimap2 index (if available) in the configure file.
+**Option 2:** modify the configure file (config.tsv) to specify the location of the softwares (minimap2 & Sniffles2) and the minimap2 index (if available) in the configure file.
     for example, MINIMAP2	${your_path}/minimap2
 
 ## Step 1 ## 
