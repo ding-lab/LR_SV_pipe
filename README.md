@@ -32,11 +32,11 @@ Usage: perl LR_SV_pipe.pl config.tsv
   modify the parameters configure file (config.tsv), inclduing the paths of output "OUTDIR", sample list "SAMPLE", softwares and index and the bsub setting. 
 
 ## Step 3 ##
-  run **perl LR_SV_pipe.pl config.tsv**
+  run **perl LR_0_StrucVar.pl config4StrucVar.tsv**
   
   Please be sure the output dir is writtable and all softwares can be invoked. 
 
-  Take care of the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency SVs) modes.
+  Take care of the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency/non-germline SVs) modes.
 
 ## Contact ##
 Yuwei ZHANG ywhang0713@gmail.com
