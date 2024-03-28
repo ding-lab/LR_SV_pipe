@@ -11,9 +11,9 @@ Usage: perl LR_SV_pipe.pl config.tsv
 
     export PATH=/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda/envs/longread_cv/bin/:$PATH
     
-    export STORAGE1=/rdcw/fs1/dinglab/Active export SCRATCH1=/rdcw/fs1/dinglab/
+    export STORAGE1=/rdcw/fs1/dinglab/Active export SCRATCH1=/scratch1/fs1/dinglab/Active
     
-    export LSF_DOCKER_VOLUMES="$STORAGE1:$STORAGE1"
+    export LSF_DOCKER_VOLUMES="$STORAGE1:$STORAGE1 $SCRATCH1:$SCRATCH1"
     
   do NOT forget to run `source ~/.bashrc`
   
