@@ -1,45 +1,35 @@
 JOBNAME	SVcall
 OUTDIR	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out
-SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/samplefull.lst
+SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample.lst
 
-#sample file should be in the below format:
-#id sequencing_platform input_path
-
-
+	#sample file should be in the below format:
+	#id sequencing_platform input_path
 
 ################## parameter ##################
-MINIMAP2	minimap2
+MINIMAP2	/rdcw/fs2/home1/Active/home/yuweiz/anaconda3/envs/longread_sv/bin/minimap2
 #minimap2 = 2.19
-SNIFFLES	sniffles
+SNIFFLES	/rdcw/fs2/home1/Active/home/yuweiz/anaconda3/envs/longread_sv/bin/sniffles
 #SNIFFLES = 2.0.7
+GATK	gatk
+	#/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/bin/gatk
 
 SAMTOOLS	samtools
 THREAD	12
 SNIFFLES_MODE	Both
-#Sniffles can predict SVs in two modes, basic and mosaic. Options: Both/Basic/Mosaic
-
-
+	#Sniffles can predict SVs in two modes, basic and mosaic. Options: Both/Basic/Mosaic
 
 ################## index ##################
 INDEX	/rdcw/fs1/dinglab/Active/Projects/yuweiz/data/human/hg38/minimap2/hg38.mmi
+REF	/rdcw/fs1/dinglab/Active/Projects/yuweiz/data/human/hg38/GRCh38.p13.genome.fa
 
 
+################## GATK germline mutation ###################
+PLOIDY	1
+MIN_MAP_Q	30
+MIN_BASE_Q	20
 
 
 ################### bsub ###################
 GROUP	/yuweiz/default
 QUEUE	general
-#APP	docker(scao/dailybox)
 
-#bsub -g /$compute_username/$group_name -q $q_name -n 1 -R \"select[mem>30000] rusage[mem=30000]\" -M 30000000 -a \'docker(scao/dailybox)\' -o $lsf_out -e $lsf_err bash $sh_file
-
-
-
-
-
-################## SLURM setting ##################
-#PARTITION	debug
-#NODENUM	1
-#NTASKS_PER_NODE	1
-#CPU_PER_TASK	12
-#ARRAY	1-3
