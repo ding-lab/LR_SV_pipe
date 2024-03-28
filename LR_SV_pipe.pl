@@ -39,6 +39,8 @@ my $sample_f = abs_path($conf{SAMPLE});
 my $step1 = "";
 my $step2 = "";
 my $step3 = "";
+my $step4 = "";
+my $step5 = "";
 my $mode = $conf{SNIFFLES_MODE};
 #### write you things ###
 my $sample_size = 0;
@@ -95,14 +97,20 @@ while(<IN>){
 	}
 	# print $cmd."\n";
 
-	
+	$step4 = "$conf{SAMTOOLS} addreplacerg -r \'\@RG\\tID:samplename\\tSM:samplename\' $out/$id/00_mapping/$id.minimap2.align.bam| $conf{SAMTOOLS} view -bS - >$out/$id/00_mapping/$id.minimap2.rehead.bam && $conf{SAMTOOLS} index $out/$id/00_mapping/$id.minimap2.rehead.bam && rm $out/$id/00_mapping/$id.minimap2.align.bam";
+
+	make_path "$out/$id/03_GATK";
+	$step5 = "$conf{GATK} HaplotypeCaller -R $conf{REF} -I $out/$id/00_mapping/$id.minimap2.rehead.bam -O $out/$id/03_GATK/output.gvcf --ploidy $conf{PLOIDY} --minimum-mapping-quality $conf{MIN_MAP_Q} --min-base-quality-score $conf{MIN_BASE_Q} && $conf{GATK} VariantFiltration  -R $conf{REF}  -V $out/$id/03_GATK/output.gvcf  -O $out/$id/03_GATK/output.filtered.gvcf   --filter-name \"lowAF\"   --filter-expression \'AD / DP < 0.15\' --filter-name \"lowDP\"  --filter-expression \'DP < 10\'   --filter-name \"lowAD\"   --filter-expression \'AD < 5\'";
+	$cmd = $cmd.$step4."\n".$step5."\n";
+
+
 	open OUT, ">$out/$id/cmd.sh";
 	print OUT "$cmd";
 	close OUT;
 	
 	my $lsf_out = "$out/$id/bsub.log";
 	my $lsf_err = "$out/$id/bsub.err";
-	$bsub = "bsub -g $group -q $q -n 1 -R \"select[mem>30000] rusage[mem=30000]\" -M 30000000 -a \'docker(scao/dailybox)\' -o $lsf_out -e $lsf_err bash $out/$id/cmd.sh";
+	$bsub = "bsub -g $group -q $q -n 1 -R \"select[mem>30000] rusage[mem=30000]\" -M 3000000 -a \'docker(scao/dailybox)\' -o $lsf_out -e $lsf_err bash $out/$id/cmd.sh";
 	print $bsub."\n";
 	system `$bsub`;
 
