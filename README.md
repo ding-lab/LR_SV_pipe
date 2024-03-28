@@ -1,6 +1,6 @@
 # A pipeline for calling SVs from long-read sequencing data
 
-This pipeline is designed for calling structural and somatic variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
+This pipeline is designed for calling somatic structural and small variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
 It works on LSF job scheduler and can run multiple jobs in parallel.
 Basically, this pipeline is composed of two steps: `LR_0_StrucVar.pl` for structral variants, and `LR_1_SmallVar.pl` for small variants.
 
