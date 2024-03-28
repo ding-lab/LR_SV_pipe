@@ -42,7 +42,9 @@ Usage: a. perl LR_0_StrucVar.pl config4StrucVar.tsv    b. perl LR_1_SmallVar.pl 
   Small variant calling is based on ClairS (https://github.com/HKU-BAL/ClairS). 
   This step requires the output bam file from Minimap2!
   
-  a. load new environment: `export PATH=/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin:$PATH`
+  a. load new environment: 
+  
+  `export PATH=/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin:$PATH`
 
   b. set up a configure file and a sample list. 
 
