@@ -1,6 +1,6 @@
 JOBNAME	SomaticVariant
 OUTDIR	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/04_deepvariant/
-SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample4tonly.tsv
+SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample4SomaticVar.lst
 
 #sample file should be in the below format:
 #run_id	tumor_path	normal_path(if applicable).     #tab separated
