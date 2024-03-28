@@ -46,7 +46,7 @@ Usage: a. perl LR_0_StrucVar.pl config4StrucVar.tsv    b. perl LR_1_SmallVar.pl 
 
   b. set up a configure file and a sample list. 
 
-      sample list format: #id    tumor_bam_path    normal_bam_path(if no, will automatically run ClairS in the tumor only mode)
+      sample list format: #id    tumor_bam_path    normal_bam_path (if none, will run in the tumor only mode)
   
   c. run **perl LR_1_SmallVar.pl config4SmallVar.tsv**
 
