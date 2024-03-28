@@ -1,0 +1,33 @@
+JOBNAME	SomaticVariant
+OUTDIR	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/04_deepvariant/
+SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample4tonly.tsv
+
+#sample file should be in the below format:
+#run_id	tumor_path	normal_path(if applicable).     #tab separated
+#Carefully check your sample list, which determines the running mode (T-N matched or tumor only)
+
+################# Clair3 ###################
+
+PYTHON	/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/python
+PYPY	/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/clair3/bin/pypy3.6
+SAMTOOLS	/rdcw/fs1/dinglab/Active/Projects/yuweiz/anaconda3/envs/py39/bin/samtools
+PLATFORM	hifi_revio
+#Select the sequencing platform of the input. Possible options {ont_r10_dorado_sup_4khz, ont_r10_dorado_hac_4khz, ont_r10_dorado_sup_5khz, ont_r10_guppy_sup_4khz, ont_r10_guppy_hac_5khz, ilmn, hifi_revio}.
+THREAD	10
+REF	/rdcw/fs1/dinglab/Active/Projects/yuweiz/data/human/hg38/GRCh38.p13.genome.fa
+
+
+
+
+
+
+
+################### bsub ###################
+GROUP	/yuweiz/default
+QUEUE	general
+#APP	docker(scao/dailybox)
+
+#bsub -g /yuweiz/default -q general -n 1 -R "select[mem>30000] rusage[mem=30000]" -M 30000000 -a 'docker(scao/dailybox)' -o /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/gatk.log  -e /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out/test2/gatk.err bash /rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test.cmd.sh
+#samtools addreplacerg -r '@RG\tID:samplename\tSM:samplename' test2.minimap2.align.bam | samtools view -bS - >test.bam
+
+
