@@ -1,6 +1,6 @@
 JOBNAME	SVcall
 OUTDIR	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/test_out
-SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample.lst
+SAMPLE	/rdcw/fs1/dinglab/Active/Projects/yuweiz/projects/longreads_sv/sample4StrucVar.lst
 
 	#sample file should be in the below format:
 	#id sequencing_platform input_path
