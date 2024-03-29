@@ -35,7 +35,7 @@ Usage: a. perl LR_0_StrucVar.pl config4StrucVar.tsv    b. perl LR_1_SmallVar.pl 
   
   Please be sure the output dir is writtable and all softwares can be invoked. 
 
-  Pay attention to the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency/non-germline SVs) modes.
+  Take care of the Sniffles mode!!! This pipeline defaultly runs both basic and mosaic (for low-frequency/non-germline SVs) modes.
 
 ## Step 4 ##
   Small variant calling is based on ClairS (https://github.com/HKU-BAL/ClairS). 
