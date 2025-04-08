@@ -1,4 +1,4 @@
-# A pipeline for calling SVs from long-read sequencing data
+# A pipeline for calling SVs from long-read sequencing data (deprecated)
 
 This pipeline is designed for calling somatic structural and small variants from long-read sequencing data (e.g. Pacbio-HiFi and Ont). 
 It works on LSF job scheduler and can run multiple jobs in parallel.
